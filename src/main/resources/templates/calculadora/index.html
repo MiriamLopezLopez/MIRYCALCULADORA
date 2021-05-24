@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<h1>, initial-scale=1.0">
+    <title>Mi Calculadora</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Calculadora Simple</h1>
+            <p class="lead">
+                Ejemplo de Calculadora usando MVC en spring
+            </p>
+            <hr class="my-4">
+            <p>Introduce los datos solicitados</p>
+            <div>
+             <form action="#" th:action="@{/resultado}" th:object="${calcu}" method="post">
+               <p>Primer número: <input type="number" th:field="*{num1}" class="form-control"/></p>
+               <p>Segundo número: <input type="number" th:field="*{num2}" class="form-control"/></p>
+               <p>
+                Operación:
+                <select th:field="*{operador}" class="form-control">
+                   <option value="+">Suma (+)</option>
+                   <option value="-">Resta (-)</option>
+                   <option value="*">Multiplicar (*)</option>
+                   <option value="/">Dividir (/)</option>
+                </select>
+               </p>
+               <p>
+               <label th:text="'Resultado de ' + *{num1} + *{operador} + *{num2} + ' = ' + *{resultado}" > </label>
+               <p><input type="submit" value="Calcular" /><input type="reset" value="Limpiar" /></p>
+             </form>
+            </div>
+
+            <hr class="my-4">
+            <div>
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8">
+                        <p>Desarrollo de  Web Avanzado  MIRIAM LOPEZ LOPEZ</p>
+                        <p>ITSSNP 24/05/2021</p>
+                    </div>
+                    <div class="col-2"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
